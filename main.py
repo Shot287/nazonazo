@@ -1,30 +1,22 @@
 import streamlit as st
 
 # アプリのタイトル
-st.title("20問の4択クイズアプリ")
+st.title("英語　文法クイズ　１２問")
 
 # 質問と選択肢を定義
 quiz_data = [
-    {"question": "フランスの首都はどこですか？", "options": ["ベルリン", "パリ", "ローマ", "マドリード"], "answer": "パリ"},
-    {"question": "赤い惑星として知られているのはどれですか？", "options": ["地球", "火星", "木星", "土星"], "answer": "火星"},
-    {"question": "『ハムレット』を書いたのは誰ですか？", "options": ["マーク・トウェイン", "ウィリアム・シェイクスピア", "チャールズ・ディケンズ", "レフ・トルストイ"], "answer": "ウィリアム・シェイクスピア"},
-    {"question": "地球上で最も大きな海はどれですか？", "options": ["大西洋", "インド洋", "北極海", "太平洋"], "answer": "太平洋"},
-    {"question": "日本の首都はどこですか？", "options": ["東京", "大阪", "京都", "札幌"], "answer": "東京"},
-    {"question": "光の速度は約どれくらいですか？", "options": ["30,000 km/s", "300,000 km/s", "3,000,000 km/s", "300 km/s"], "answer": "300,000 km/s"},
-    {"question": "ピカソのフルネームはどれですか？", "options": ["パブロ・ディエゴ・ホセ", "パブロ・フランシスコ", "パブロ・リカルド", "パブロ・アルフォンソ"], "answer": "パブロ・ディエゴ・ホセ"},
-    {"question": "ニュートンが発見した法則は何ですか？", "options": ["相対性理論", "重力の法則", "進化論", "熱力学の法則"], "answer": "重力の法則"},
-    {"question": "世界で最も高い山はどれですか？", "options": ["エベレスト", "キリマンジャロ", "モンブラン", "マッキンリー"], "answer": "エベレスト"},
-    {"question": "音の速度はどれくらいですか？", "options": ["約340 m/s", "約3,400 m/s", "約34 m/s", "約3.4 m/s"], "answer": "約340 m/s"},
-    {"question": "最も長い川はどれですか？", "options": ["ナイル川", "アマゾン川", "ミシシッピ川", "黄河"], "answer": "ナイル川"},
-    {"question": "最も人口の多い国はどれですか？", "options": ["中国", "インド", "アメリカ", "インドネシア"], "answer": "中国"},
-    {"question": "ピラミッドがある国はどこですか？", "options": ["エジプト", "メキシコ", "ペルー", "イラン"], "answer": "エジプト"},
-    {"question": "イギリスの国旗の名前は何ですか？", "options": ["ユニオンジャック", "スターズ・アンド・ストライプス", "トリコロール", "ハンマー＆シックル"], "answer": "ユニオンジャック"},
-    {"question": "最も短い月はどれですか？", "options": ["2月", "4月", "6月", "9月"], "answer": "2月"},
-    {"question": "化学記号がNaで表される元素は何ですか？", "options": ["ナトリウム", "ナイトロジェン", "ネオン", "ニッケル"], "answer": "ナトリウム"},
-    {"question": "月の裏側を最初に見た探査機は何ですか？", "options": ["ルナ3号", "アポロ11号", "ヴォストーク1号", "ボイジャー2号"], "answer": "ルナ3号"},
-    {"question": "最も面積が大きい国はどれですか？", "options": ["ロシア", "カナダ", "アメリカ", "中国"], "answer": "ロシア"},
-    {"question": "日本の最高峰はどれですか？", "options": ["富士山", "槍ヶ岳", "北岳", "御嶽山"], "answer": "富士山"},
-    {"question": "人体で最も大きな臓器はどれですか？", "options": ["皮膚", "肝臓", "心臓", "脳"], "answer": "皮膚"}
+    {"question": "She is ( ) regarded for her achievements in the IT industry.", "options": ["high", "highly", "height", "heighten"], "answer": "highly"},
+    {"question": "The agreement was entirely ( ) to our shareholders.", "options": ["accept", "acceptable", "acceptably", "acceptance"], "answer": "acceptable"},
+    {"question": "We would appreciate it if you would consider ( ) at our hotel next time.", "options": ["staying", "stayed", "to stay", "stays"], "answer": "staying"},
+    {"question": "Some enthusiastic politicians ( ) global environment issues.", "options": ["talked", "said", "spoke", "discussed"], "answer": "discussed"},
+    {"question": "The store manager distributed the promotional flyers ( ).", "options": ["he", "his", "him", "himself"], "answer": "himself"},
+    {"question": "We have ( ) information about the candidates.", "options": ["many", "little", "every", "several"], "answer": "little"},
+    {"question": "Ivan lost his notes. ( ), he made a great speech.", "options": ["If", "Moreover", "Although", "Nevertheless"], "answer": "Nevertheless"},
+    {"question": "( ) you install a navigation system, you will never get lost anymore", "options": ["Despite", "Once", "However", "Since"], "answer": "Once"},
+    {"question": "This e-mail explains ( ) candidates must prepare for their job interview.", "options": ["whom", "what", "who", "whose"], "answer": "what"},
+    {"question": "Companies ( ) export their goods have increased sales sharply.", "options": ["that", "whose", "whom", "what"], "answer": "that"},
+    {"question": "We were given an award for achieving the ( ) sales in 10 years.", "options": ["highest", "high", "higher", "highly"], "answer": "highest"},
+    {"question": "Construction of the new hotel took ( ) longer than originally planned.", "options": ["more", "far", "too", "very"], "answer": "far"}
 ]
 
 # スコアの初期化
@@ -32,7 +24,7 @@ score = 0
 
 # クイズデータの各質問をループで処理
 for i, q in enumerate(quiz_data):
-    st.subheader(f"質問 {i + 1}: {q['question']}")
+    st.subheader(f"問題 {i + 1}: {q['question']}")
     # ユーザーの回答を取得
     user_answer = st.radio("答えを選んでください:", ["選択してください"] + q['options'], key=i)
 
@@ -45,7 +37,7 @@ for i, q in enumerate(quiz_data):
         st.success("正解です！")
         score += 1
     else:
-        st.error(f"不正解です。正しい答えは「{q['answer']}」です。")
+        st.error("不正解です。")
 
 # 最終スコアの表示
 st.write(f"あなたの最終スコアは {score}/{len(quiz_data)} です。")
